@@ -162,7 +162,7 @@ public class Main
 {
 	public static void main(String[] args) {
 	    int millisecondsToWait = 1000;
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 10; i >= 1; i--) {
 		    System.out.printf("%d ", i);
 		    
 		    try {
@@ -171,6 +171,29 @@ public class Main
             e.printStackTrace();
         }
 		}
+		System.out.println("\nFeliz ano novo!");
 	}
 }
+
+/*3.Soma de Números Pares: Escreva um programa em Java que utiliza uma estrutura de repetição for para somar todos os números pares de 1 a 100. Em seguida, exiba o resultado da soma.*/
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    
+	    System.out.printf("Somar todos os números pares de 1 até: ");
+	    int total = scan.nextInt();
+	    int soma = 0;
+	    for(int i = 2; i <= total ; i += 2) {
+	        soma += i;
+	    }
+	    System.out.printf("O resultado da soma de todos os números pares de 1 até %d é: %d", total,soma);
+	}
+}
+
+
+
+
 
