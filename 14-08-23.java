@@ -27,7 +27,7 @@ public class Main
 	public static void main(String[] args) {
 		Scanner scan = new Scanner (System.in);
 		System.out.println("Digite números inteiros positivos que vou soma-los (digite um negativo para parar): ");
-		int numeros = scan.nextInt();
+		int numeros = 0;
 		int novoNumero = 0;
 		while (novoNumero >= 0) {
 		    numeros += novoNumero;
@@ -137,7 +137,7 @@ public class Main
 //EXERCÍCIOS DE FOR
 
 /*1.Tabuada de Multiplicação: Escreva um programa em Java que solicita ao usuário um número inteiro. 
-Utilize uma estrutura de repetição for para exibir a tabuada de multiplicação desse número, de 1 a 10.
+Utilize uma estrutura de repetição for para exibir a tabuada de multiplicação desse número, de 1 a 10.*/
 
 import java.util.*;
 public class Main
@@ -146,13 +146,12 @@ public class Main
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Digite um número inteiro: ");
 		int num = scan.nextInt();
-		int a = 0;
-		for(int i = 1; i <= 10; i++) {
-		    a = (num * i);
-		    System.out.printf("%d ", a);
+		for(int i = 0; i <= 10; i++) {
+		    System.out.printf("%d x %d = %d\n",num, i, num*i);
 		}
 	}
 }
+
 
 /*2.Contagem Regressiva de Ano Novo: Escreva um programa em Java que exibe uma contagem regressiva de 10 segundos para o Ano Novo. 
 Utilize uma estrutura de repetição for para fazer a contagem e inclua um pequeno atraso entre cada segundo para que a contagem seja visível. */
