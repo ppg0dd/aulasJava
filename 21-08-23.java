@@ -48,4 +48,67 @@ public class Mavenproject1 {
     
 }
 
-//terminar de fazer a calculadora
+//finalizado:
+
+import java.util.*;
+public class Main
+{
+    public static int somar(int a, int b) {
+        int r = a + b;
+        return r;
+    }
+    public static int sub(int a, int b) {
+        int r = a - b;
+        return r;
+    }
+    public static int multi(int a, int b) {
+        int r = a * b;
+        return r;
+    }
+    public static float div(float a, float b) {
+        float r = a / b;
+        return r;
+    }
+    
+    
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner (System.in);
+        System.out.printf("\n\tCalculadora:\n\n\t7\t8\t9\tx\n\t4\t5\t6\t-\n\t1\t2\t3\t+\n\t0\t.\t=\t/\n\n");
+        System.out.println("\n\tSomar: 1\n\tSubtrair: 2\n\tMultiplicar: 3\n\tDividir: 4\n");
+        int opcao = scan.nextInt();
+        int x, y, resultado;
+        switch (opcao){
+            case 1:
+                System.out.println("Digite os dois valores:");
+                x = scan.nextInt();
+                y = scan.nextInt();
+                resultado = somar(x, y);
+                System.out.printf("\nResultado da soma: "+ resultado);
+                break;
+            case 2: 
+                System.out.println("Digite os dois valores:");
+                x = scan.nextInt();
+                y = scan.nextInt();
+                resultado = sub(x, y);
+                System.out.printf("\nResultado da subtração: "+ resultado);
+                break;
+            case 3:
+                System.out.println("Digite os dois valores:");
+                x = scan.nextInt();
+                y = scan.nextInt();
+                resultado = multi(x, y);
+                System.out.printf("\nResultado da multiplicação: "+ resultado);
+                break;
+            case 4:
+                System.out.println("Digite os dois valores:");
+                float a = scan.nextFloat();
+                float b = scan.nextFloat();
+                float resultado1 = div(a, b);
+                System.out.printf("\nResultado da divisão: %.2f", resultado1);
+                break;
+            default:
+                System.out.println("\nIsso é inválido!");
+	    }
+       
+	}
+}
