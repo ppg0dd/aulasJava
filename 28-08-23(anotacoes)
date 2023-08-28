@@ -1,0 +1,83 @@
+Recaptulação da aula passada:
+
+Objetos são instâncias da classe
+as classes possuem métodos, são conjunto de códigos padrões que fazemos
+NomeDaClasse obj = new NomeDaClasse();
+
+acesso via operador é utilizando o nome e dpeois um ponto
+minhaConta.nome = 
+
+UmDado d = null;
+System.out.println(d) = null;
+System.out.println(i.d) = erro;
+
+interface do objeto = conjunto de elementos que você pode utilizar
+Lampada L = new Lampada();
+métodos:
+Acender();
+Apagar();
+
+Aula atual:
+
+Atribuição de valores:
+X = Y copia o valor de Y e da esse valor para o X
+Se Y ou X mudar, isso não vai afetar nenhum deles.
+Atribuição de objetos:
+Em objetos isso copia a referência, ou seja, X não ganha o valor de Y,
+O Valor de X é apontado para o Y, portanto, se Y for mudado, o X também vai;
+
+Quando vc faz
+Coordenada c2 = new Coordenada();
+Você reserva um espaço na memória, então se vc faz c2 = c1 depois, isso copia a referencia, e o espaço reservado é deixado de lado (isso gasta memória)
+portanto se você quer copiar a referência, não use o new Coordenada().
+
+this:
+usado para fazer uma referência ao objeto
+class Num {
+	int i = 5;
+	void somar(int i) {this.i += i;}
+}
+esse this é usado para referênciar o "i" do objeto e não o "i" da função.
+
+valores default
+class Conta {
+	int numero; //0
+	String dono; //null
+	double saldo; //0.0
+	double limite = 1000.0;
+}
+
+implementando associações entre classes:
+class Conta {
+	int numero;
+	double saldo;
+	double limite = 1000.0;
+	Cliente titular;
+}
+class Cliente {
+	String nome;
+	String sobrenome;
+	String cpf;
+}
+
+Se você quer o numero da conta:
+conta.numero
+se você quer o nome do cliente pela conta:
+conta.titular.nome
+
+esse titular (nome definido por você) serve para referênciar a outra classe
+
+public class teste
+ public static void main(String[] args) {
+	Cliente larry = new Cliente();
+	larry.nome = "Larry";
+	larry.sobrenome = "Ellison";
+
+	Conta conta = new Conta();
+	conta.saldo = 50_400_000_000.0;
+	conta.titular = larry;			//referenciando o objeto larry
+
+	System.out.println(conta.titular.nome);
+}
+
+//Saída: Larry
