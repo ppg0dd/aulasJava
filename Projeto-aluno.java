@@ -29,7 +29,19 @@ public class Main
 	    System.out.println("\nDigite sua nota do 2 Bimestre: ");
 	    double nota2 = scan.nextDouble();
 	    
-	    
+	    if (nota1+nota2 < 6) {
+	        System.out.println("\nReprovado.");
+	    } else if(nota1+nota2 < 14) {
+	        System.out.println("\nDigite sua nota da prova final");
+	        double notaFinal = scan.nextDouble();
+	        if (notaFinal + ((nota1+nota2)/2) < 10) {
+	            System.out.println("\nReprovado.");
+	        } else {
+	            System.out.println("\nAprovado.");
+	        } 
+	    }else {
+	        System.out.println("\nAprovado.");
+	    }
 	}
 }
 
@@ -102,10 +114,5 @@ public class Aluno
     public void passarPeriodo() {
         this.periodo += 1;
     }
-    
-    //NOTA
-    public double calcularFinal(int a, int b) {
-        Scanner scan = new Scanner(System.in);
-        int notaFinal = scan.nextDouble();
-    }
+       
 }
