@@ -29,21 +29,51 @@ public class Main
 	    System.out.println("\nDigite sua nota do 2 Bimestre: ");
 	    double nota2 = scan.nextDouble();
 	    
+	    String status;
+	    
 	    if (nota1+nota2 < 6) {
-	        System.out.println("\nReprovado.");
+	        status = "Reprovado.";
 	    } else if(nota1+nota2 < 14) {
 	        System.out.println("\nDigite sua nota da prova final");
 	        double notaFinal = scan.nextDouble();
 	        if (notaFinal + ((nota1+nota2)/2) < 10) {
-	            System.out.println("\nReprovado.");
+	            status = "Reprovado.";
 	        } else {
-	            System.out.println("\nAprovado.");
+	            status = "Aprovado.";
 	        } 
 	    }else {
-	        System.out.println("\nAprovado.");
+	        status = "Aprovado.";
 	    }
+	    
+	    System.out.println("\n" + status);
+	    
+	    if (status == "Aprovado.") {
+	        c1.passarPeriodo();
+	        System.out.println("\n\nO aluno deseja ir para qual turma para o próximo período? \n1-A\n2-B\n3-C\n4-D");
+	        int novaTurma = scan.nextInt();
+	        switch (novaTurma){
+	            case 1:
+	                c1.setTurma("A");
+	                break;
+	            case 2:
+	                c1.setTurma("B");
+	                break;
+	            case 3:
+	                c1.setTurma("C");
+	                break;
+	            case 4:
+	                c1.setTurma("D");
+	            default:
+	                break;
+	        }
+	    }
+
+	    
+	    
+	    System.out.printf("\nMatrícula: %s\nNome: %s\nCurso: %s\nTurma: %s\nPeriodo: %d", c1.getMatricula(), c1.getNome(), c1.getCurso(), c1.getTurma(), c1.getPeriodo());
 	}
 }
+
 
 
 import java.util.*;
