@@ -14,7 +14,7 @@ public class Administradora extends Juridica implements InstituicaoFinanceira{
     }
     
     public void adicionarInvestimento (int id, double valor) {
-        Investimento i = new Investimento (int id, double valor, this);
+        Investimento i = new Investimento (id, valor, this);
         
     }
     
