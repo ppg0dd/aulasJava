@@ -21,14 +21,36 @@ public class Cliente {
         return this.cpf;
     }
     
-    public void comprar (int id, int tipoPagamento, double valorOriginal) {
-        Pagamento p = new Pagamento (id, this, tipoPagamento, valorOriginal);
+    public void comprar (int tipoPagamento, double valorOriginal) {
+        Pagamento p = new Pagamento (this, tipoPagamento, valorOriginal);
         lista.add(p);
     }
     
     public void imprimirCompras() {
+        System.out.println("\tLista de compras do " + nome);
         for (Pagamento p : lista) {
-            System.out.println(p.getId());
+            String pag = null;
+            switch (p.getTipoPagamento()) {
+                case 1:
+                    pag = "Avista";
+                    break;
+                case 2:
+                    pag = "Cartão";
+                    break;
+                case 3: 
+                    pag = "Pix";
+                    break;
+                default:
+                    break;
+            }
+            System.out.println("Id: " + p.getId() + "\nTipo de pagamento: " + pag + "\nValor original: R$ " + p.getValorOriginal()+ "\nValor com desconto: R$" + p.getValorCalculado() + "\n");
+        } 
+    }
+    public void valorGasto () {
+        double total = 0;
+        for (Pagamento p: lista) {
+            total += p.getValorCalculado();
         }
+        System.out.println("Valor total gasto (com desconto): R$" + total + "\n");
     }
 }
