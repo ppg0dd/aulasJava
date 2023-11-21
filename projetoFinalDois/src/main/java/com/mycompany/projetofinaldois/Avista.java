@@ -1,5 +1,5 @@
-package com.mycompany.projetofinaldois;
+ package com.mycompany.projetofinaldois;
 
-public interface Avista {
-    
+ public interface Avista {
+    public void calcularAVista ();
 }
